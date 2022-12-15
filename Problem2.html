@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo1">Click on the button below in order to change the text here.</p>
+<button onclick="myFunction1()">In Built getElementById </button>
+<button onclick="myFunction2()">My GetElementById</button>
+<script>
+
+
+// Normal Document.getElementById method
+function myFunction1() {
+document.getElementById("demo1").innerHTML = "Hi, This Actual GetElementById";
+}
+
+
+// Using My Own Function
+const ele=Myfunc('demo1')
+function myFunction2(){
+    ele.innerHTML="Hi This My GetElementById"
+}
+
+
+
+
+
+
+/*  
+
+Problem: Implementation of geEtlementById which performs which performssame basic task as actual getElementById in javascript
+
+
+My Approch for the Problem:
+       This function loops through all elements in the document and checks if each element has the specified id. If an element is found with the specified id, it is returned. Otherwise, null is returned if no element was found with the specified id.
+     
+
+
+
+
+*/
+
+
+function Myfunc(id) {
+   // Get all elements in the document
+  var elements = document.getElementsByTagName('*');
+  
+  // Loop through all elements
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+
+    // Check if the element has the specified id
+    if (element.id === id) {
+      // Return the element if it has the specified id
+      return element;
+    }
+  }
+
+  // Return null if no element was found with the specified id
+  return null;
+}
+
+
+
+
+
+</script>
+</body>
+</html>
